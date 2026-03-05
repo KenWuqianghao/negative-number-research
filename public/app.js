@@ -8,19 +8,24 @@ const pageSearch = document.getElementById("page-search");
 const pageInfo = document.getElementById("page-info");
 const navSearch = document.getElementById("nav-search");
 const navInfo = document.getElementById("nav-info");
+const prefix = document.getElementById("number-prefix");
 
 let sessionFinds = 0;
 let hasSearched = false;
 
 input.addEventListener("input", () => {
+  // Strip anything that isn't a digit
+  input.value = input.value.replace(/[^0-9]/g, "");
   const val = input.value.trim();
-  submitBtn.disabled = val === "" || val === "-";
+  submitBtn.disabled = val === "";
+  prefix.classList.toggle("active", val !== "");
 });
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const val = input.value.trim();
-  if (!val || val === "-") return;
+  const digits = input.value.trim().replace(/[^0-9]/g, "");
+  if (!digits) return;
+  const val = "-" + digits;
 
   if (!hasSearched) {
     hasSearched = true;
@@ -70,6 +75,7 @@ form.addEventListener("submit", async (e) => {
   input.value = "";
   submitBtn.textContent = "\u2192";
   submitBtn.disabled = true;
+  prefix.classList.remove("active");
   hint.textContent = "press enter to search";
   input.focus();
 });

@@ -27,11 +27,13 @@
     <main class="home" id="page-search">
       <form id="search-form">
         <div class="number-input-wrapper">
+          <span class="number-prefix" id="number-prefix">&minus;</span>
           <input
             type="text"
             inputmode="numeric"
+            pattern="[0-9]*"
             class="number-input"
-            placeholder="enter a negative number"
+            placeholder="enter a number"
             autocomplete="off"
             id="number-input"
           >

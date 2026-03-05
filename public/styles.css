@@ -88,6 +88,19 @@ a:hover {
   border-color: var(--color-text);
 }
 
+.number-prefix {
+  font-size: 1.5rem;
+  color: var(--color-muted);
+  padding-left: 4px;
+  flex-shrink: 0;
+  transition: color 0.2s;
+  user-select: none;
+}
+
+.number-prefix.active {
+  color: var(--color-text);
+}
+
 .number-input {
   min-width: 0;
   font-family: "JetBrains Mono", monospace;
