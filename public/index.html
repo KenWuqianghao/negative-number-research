@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Negative Number Research Inc.</title>
+  <meta name="description" content="At Negative Number Research Inc., we are attempting to find and document all available negative numbers.">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header (hidden on home until first search) -->
+    <header class="header hidden" id="header">
+      <h1 class="header-title">Negative Number Research Inc.</h1>
+      <nav class="header-nav">
+        <a href="/" id="nav-search">search</a>
+        <a href="/info" id="nav-info">info</a>
+      </nav>
+    </header>
+
+    <!-- Search page -->
+    <main class="home" id="page-search">
+      <form id="search-form">
+        <div class="number-input-wrapper">
+          <input
+            type="text"
+            inputmode="numeric"
+            class="number-input"
+            placeholder="enter a negative number"
+            autocomplete="off"
+            id="number-input"
+          >
+          <button type="submit" class="number-submit" disabled aria-label="Search" id="submit-btn">&rarr;</button>
+        </div>
+        <p class="input-hint" id="input-hint">press enter to search</p>
+      </form>
+      <div id="result" class="hidden"></div>
+    </main>
+
+    <!-- Info page -->
+    <div class="info hidden" id="page-info">
+      <div class="info-description">
+        <p>At Negative Number Research Inc., we are attempting to find and document all<span class="info-asterisk">*</span> available negative numbers.</p>
+        <p>This is a volunteer-lead research position, where anyone is able to contribute. Simply type a negative number in, and we'll check if we've got it. If we have, no worries, just try another. If it's a new number, thank you for your hard work!</p>
+        <p class="info-footnote">*Currently, we are focusing our research on negative integers. Once this has been completed, then we will be able to look into positives and decimals.</p>
+      </div>
+      <div id="stats-container">
+        <div class="stats-section">
+          <p class="stats-label">numbers found</p>
+          <p class="stats-value" id="stats-total"><span class="skeleton" style="width:120px;display:inline-block">&nbsp;</span></p>
+        </div>
+        <div class="stats-section">
+          <p class="stats-label">number of the day</p>
+          <p class="stats-notd" id="stats-notd"><span class="skeleton" style="width:100px;display:inline-block">&nbsp;</span></p>
+        </div>
+        <div class="stats-section">
+          <p class="stats-label">most searched</p>
+          <ul class="top-list" id="stats-top">
+            <li><span class="skeleton" style="width:100%">&nbsp;</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "negative-number-research",
+  "version": "1.0.0",
+  "description": "At Negative Number Research Inc., we are attempting to find and document all available negative numbers.",
+  "dependencies": {
+    "@vercel/postgres": "^0.10.0"
+  }
+}
